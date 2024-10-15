@@ -1,4 +1,4 @@
-﻿# Prueba Técnica Banreservas para BackendDeveloper
+﻿# Prueba Técnica para BackendDeveloper
 
 ## Descripción General del proyecto
 
@@ -72,7 +72,6 @@ Utilizando  bash
 4- Pon como proyecto de arranque el ApiRestFullPruebaTecnica.
    y utiliza el api en el Swagger.
 
-##Los 7 EndPoint o los 7 metodos establecidos para el UniTest son :
 	
 	
 
