@@ -1,0 +1,6 @@
+@ApiRestFullPruebaTecnica_HostAddress = http://localhost:5177
+
+GET {{ApiRestFullPruebaTecnica_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
