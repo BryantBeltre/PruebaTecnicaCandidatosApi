@@ -1,4 +1,4 @@
-﻿# Prueba Técnica Banreservas para BackendDeveloper
+﻿# Prueba Técnica para BackendDeveloper
 
 ## Descripción General del proyecto
 
