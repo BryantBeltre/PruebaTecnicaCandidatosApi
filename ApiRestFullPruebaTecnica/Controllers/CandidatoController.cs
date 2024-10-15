@@ -3,6 +3,7 @@ using ApiRestFullPruebaTecnica.Application.DTOs.Candidatos;
 using ApiRestFullPruebaTecnica.Application.Queries.Candidatos;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
 namespace ApiRestFullPruebaTecnica.Controllers
 {
@@ -23,7 +24,8 @@ namespace ApiRestFullPruebaTecnica.Controllers
         {
             var query = new GetAllCandidatosQuery();
             var candidatos = await _mediator.Send(query);
-            return Ok(candidatos);
+   
+            return Ok(new {Message = "Operación exitosa.", StatusCode = 200, Data = candidatos });
         }
 
         //Obtener los candidatos por Id con la peticion GET api/candidatos{id}
@@ -33,9 +35,9 @@ namespace ApiRestFullPruebaTecnica.Controllers
             var query = new GetCandidatoByIdQuery(id);
             var candidato = await _mediator.Send(query);
             if (candidato == null)
-                return NotFound();
+                return NotFound(new { Message = "$El candidato con ID {id} no encontrado" , StatusCode = 404});
 
-            return Ok(candidato);
+            return Ok(new { Message = "Operación exitosa. ", StatusCode = 200, Data = candidato });
 
         }
 
@@ -44,11 +46,11 @@ namespace ApiRestFullPruebaTecnica.Controllers
         public async Task<IActionResult> Create([FromBody] CreateCandidatosDto createCandidatosDto)
         {
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+                return BadRequest(new {Message ="Datos de entrada invalido "+ ModelState, StatusCode = 400});
 
             var command = new CreateCandidatoCommand { CreateCandidatosDto = createCandidatosDto };
             var created = await _mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+            return CreatedAtAction(nameof(GetById), new { id = created.Id },  new {Message = "Candidato creado con éxito.", StatusCode = 201, Data = created });
         }
 
         //Modificar los datos del candidato con la peticion put
@@ -56,17 +58,17 @@ namespace ApiRestFullPruebaTecnica.Controllers
         public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCandidatosDto updateCandidatosDto)
         {
             if (id != updateCandidatosDto.Id)
-                return BadRequest("El ID del candidato no coincide.");
+                return BadRequest("El dato de en trada no es valido.");
 
             if (!ModelState.IsValid)
-                return BadRequest(ModelState);
+                return BadRequest(new { Message = "Datos id de entrada invalidos.", StatusCode = 400 });
 
             var command = new UpdateCandidatoCommand { UpdateCandidatosDto = updateCandidatosDto };
             var updated = await _mediator.Send(command);
             if(updated == null) 
-                return NotFound();
+                return NotFound(new { Message = $"El ID {id} del candidato no fue encontrado.", StatusCode = 404});
 
-            return Ok(updated);
+            return Ok(new {Message = "Candidato actualizado con éxito.", StatusCode = 201, Data = updated });
         }
 
         //Eliminar candidato con la peticion DELETE
@@ -77,9 +79,9 @@ namespace ApiRestFullPruebaTecnica.Controllers
             var result = await _mediator.Send(command);
 
             if(!result)
-                return NotFound();
+                return NotFound(new { Message = $"Candidato con ID {id} no encontrado.", StatusCode = 404 });
 
-            return Ok(result);
+            return Ok(new {Message = "Candidato eliminado co éxito.", StatusCode = 201, Data = result});
         }
 
 

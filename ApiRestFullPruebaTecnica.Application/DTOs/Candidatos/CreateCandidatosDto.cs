@@ -24,7 +24,7 @@ namespace ApiRestFullPruebaTecnica.Application.DTOs.Candidatos
         public string PhoneNumber { get; set; }
 
         [Required]
-        public DateTime BithDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         [Required]
         public string AppliedPosition { get; set; }

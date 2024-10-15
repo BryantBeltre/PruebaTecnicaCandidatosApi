@@ -46,7 +46,7 @@ namespace UnitTests.Candidatos
                 Surname = "Beltre",
                 Email = "beltrebryant07@gmail.com",
                 PhoneNumber = "8496278338",
-                BithDate = new System.DateTime(2003, 9, 7),
+                BirthDate = new System.DateTime(2003, 9, 7),
                 AppliedPosition = "Desarrollador"
             };
 
@@ -56,7 +56,7 @@ namespace UnitTests.Candidatos
                 Surname = candidatoCreateDto.Surname,
                 Email = candidatoCreateDto.Email,
                 PhoneNumber = candidatoCreateDto.PhoneNumber,
-                BithDate = candidatoCreateDto.BithDate,
+                BirthDate = candidatoCreateDto.BirthDate,
                 AppliedPosition = candidatoCreateDto.AppliedPosition
             };
 
@@ -92,7 +92,7 @@ namespace UnitTests.Candidatos
                 Surname = "Beltre Martinez",
                 Email = "bryantbeltr@gmail.com",
                 PhoneNumber = "8496278338",
-                BithDate = new System.DateTime(2003, 9, 7),
+                BirthDate = new System.DateTime(2003, 9, 7),
                 AppliedPosition = "Analista"
             };
 
@@ -103,7 +103,7 @@ namespace UnitTests.Candidatos
                 Surname = "Beltre Jr",
                 Email = "bryantJr.BeltreJr@gmail.com",
                 PhoneNumber = "8099221902",
-                BithDate = new System.DateTime(2003, 9, 8),
+                BirthDate = new System.DateTime(2003, 9, 8),
                 AppliedPosition = "Desarrollador"
             };
 
@@ -171,7 +171,7 @@ namespace UnitTests.Candidatos
                     Surname = "Beltre",
                     Email = "beltrebryant07@gmail.com",
                     PhoneNumber = "8496278338",
-                    BithDate = new System.DateTime(2003, 9, 7),
+                    BirthDate = new System.DateTime(2003, 9, 7),
                     AppliedPosition = "Desarrollador"
                 },
                 new Candidato
@@ -181,7 +181,7 @@ namespace UnitTests.Candidatos
                     Surname = "Beltre Martinez",
                     Email = "bryantbeltr@gmail.com",
                     PhoneNumber = "8496278338",
-                    BithDate = new System.DateTime(2003, 9, 7),
+                    BirthDate = new System.DateTime(2003, 9, 7),
                     AppliedPosition = "Analista"
                 }
             };
@@ -222,7 +222,7 @@ namespace UnitTests.Candidatos
                 Surname = "Beltre",
                 Email = "beltrebryant07@gmail.com",
                 PhoneNumber = "8496278338",
-                BithDate = new System.DateTime(2003, 9, 7),
+                BirthDate = new System.DateTime(2003, 9, 7),
                 AppliedPosition = "Desarrollador"
             };
 

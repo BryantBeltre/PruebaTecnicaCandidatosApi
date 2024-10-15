@@ -46,7 +46,7 @@ namespace ApiRestFullPruebaTecnica.Infrastructure.Persistence
                       .IsRequired() // Numero de Telefono es un campo obligatorio
                       .HasMaxLength(13);
 
-                entity.Property(c => c.BithDate)
+                entity.Property(c => c.BirthDate)
                       .IsRequired(); // FechaNacimiento de Telefono es un campo obligatorio
 
                 entity.Property(c => c.AppliedPosition)

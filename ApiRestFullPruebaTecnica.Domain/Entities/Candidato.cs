@@ -18,7 +18,7 @@ namespace ApiRestFullPruebaTecnica.Domain.Entities
 
         public string PhoneNumber { get; set; }
 
-        public DateTime BithDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public string AppliedPosition { get; set;}
 
