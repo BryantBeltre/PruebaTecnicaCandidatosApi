@@ -1,3 +1,9 @@
+## Información escencial del login
+
+**Este tiene de manera estática el Username = admin y Password = password. esto es como fin de Mostra el manejo de authentication y generar el Token para poder realizar la operación Crud. **
+
+
+
 ﻿# Prueba Técnica para BackendDeveloper
 
 ## Descripción General del proyecto
