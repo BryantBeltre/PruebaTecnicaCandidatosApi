@@ -18,7 +18,7 @@ namespace ApiRestFullPruebaTecnica.Middlewares
             _logger = logger;            
         }
 
-        public async Task TaskAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace ApiRestFullPruebaTecnica.Middlewares
             }
         }
 
-        private Task HandleExceptionAsync(HttpContext context, Exception exception)
+        public Task HandleExceptionAsync(HttpContext context, Exception exception)
         {
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;

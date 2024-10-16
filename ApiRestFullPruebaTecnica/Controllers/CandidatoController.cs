@@ -2,6 +2,7 @@
 using ApiRestFullPruebaTecnica.Application.DTOs.Candidatos;
 using ApiRestFullPruebaTecnica.Application.Queries.Candidatos;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 
@@ -19,6 +20,7 @@ namespace ApiRestFullPruebaTecnica.Controllers
         }
 
         //Obtener los candidatos con la peticion GET :  api/candidatos
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -29,6 +31,7 @@ namespace ApiRestFullPruebaTecnica.Controllers
         }
 
         //Obtener los candidatos por Id con la peticion GET api/candidatos{id}
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
@@ -42,6 +45,7 @@ namespace ApiRestFullPruebaTecnica.Controllers
         }
 
         //Crear candidato con la peticion POST
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateCandidatosDto createCandidatosDto)
         {
@@ -54,6 +58,7 @@ namespace ApiRestFullPruebaTecnica.Controllers
         }
 
         //Modificar los datos del candidato con la peticion put
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCandidatosDto updateCandidatosDto)
         {
@@ -72,6 +77,7 @@ namespace ApiRestFullPruebaTecnica.Controllers
         }
 
         //Eliminar candidato con la peticion DELETE
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id) 
         {

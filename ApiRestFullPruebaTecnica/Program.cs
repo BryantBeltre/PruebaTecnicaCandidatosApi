@@ -41,8 +41,7 @@ builder.Services.AddMediatR(config =>
 });
 
 
-
-
+builder.Services.AddSwaggerWithJwtAuth();
 
 //Configuracion Registrar FluentValidation
 builder.Services.AddFluentValidationAutoValidation();
@@ -72,7 +71,7 @@ builder.Host.UseSerilog((ctx, lc) => lc
 
 
 //Configuración de la Autenticación JWT
-//builder.Services.AddJwtAuthentication(builder.Configuration);
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -87,8 +86,9 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiRestFullPruebaTecnica v1"));
 }
+
 
 app.UseSerilogRequestLogging();
 
@@ -100,7 +100,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 //Middleware de manejo de excepciones
-//app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 //Middleware de métricas
 app.UseMiddleware<ApiMetricsMiddleware>();

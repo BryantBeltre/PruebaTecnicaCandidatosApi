@@ -27,7 +27,7 @@ namespace ApiRestFullPruebaTecnica.Controllers
             var tokenResponse = await _mediator.Send(command);
 
             if (tokenResponse == null)
-                return Unauthorized(new { Message = "Credenciales iválidas." });
+                return Unauthorized(new { Message = "Credenciales inválidas." });
 
             return Ok(tokenResponse);
         }
