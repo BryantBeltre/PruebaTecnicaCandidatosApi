@@ -1,6 +1,6 @@
 ## Información escencial del login
 
-**Este tiene de manera estática el Username = admin y Password = password. esto es como fin de Mostra el manejo de authentication y generar el Token para poder realizar la operación Crud. **
+**Este tiene de manera estática el Username = admin y Password = password. Esto es como fin de mostrar el manejo de authentication y generar el Token para poder realizar la operación Crud. **
 
 
 
