@@ -4,7 +4,7 @@
 
 Este proyecto es un API RESTful, desarrollado en **.Net 8**. Utilizando arquitectura **ONION**. Este proyecto permite realizar las operaciones CRUD de la entidad Candidato y registrar métricas de consumo del API. Además, 
 implementa los patrones de diseño **Unit of Work** y **CQRS** para mejorar la gestión de transacciones y la separación de responsabilidades entre operaciones de lectura y escritura. Manejo de errores de las peticiones Http. Tiene la configuración
-de autenticación **JWT = JSON Web Tokens**. A pesar de estar estructurada e implementada en el proyecto, no está funcionando en su totalidad. También consta de un proyecto de Test de las operaciones CRUD de los Handlers de Candidatos y 
+de autenticación **JWT = JSON Web Tokens**. También consta de un proyecto de Test de las operaciones CRUD de los Handlers de Candidatos y 
 las operaciones del UnitOfWork, las cuales pasan los 7 endpoints con éxito. Finalmente se publico el proyecto a un repositorio GitHub utilizado gitbash y manejos de vesiones **tags**
 
 ## Detalles de las tecnologías utilizadas
